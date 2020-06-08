@@ -20,26 +20,23 @@ class Main extends PluginBase{
                             return true;
                         }
                         $change = $player->getName();
+						
                         if($args[0] == "0"){
-                            $player->setGameMode(0);
+                            $player->setGamemode(0);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Überleben §agesetzt");
-                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2". $change ." §azu §2Überleben §ageändert");
-				
+                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Überleben §ageändert");
                         } else if($args[0] == "1"){
-                            $player->setGameMode(1);
+                            $player->setGamemode(1);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Kreativ §agesetzt");
-                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2$change §azu §2Kreativ §ageändert!");
-				
+                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Kreativ §ageändert!");
                         } else if($args[0] == "2"){
-                            $player->setGameMode(2);
+                            $player->setGamemode(2);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Abendteuer §agesetzt");
-                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2$change §azu §2Abendteuer §ageändert!");
-				
+                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Abendteuer §ageändert!");
                         } else if($args[0] == "3"){
-                            $player->setGameMode(3);
+                            $player->setGamemode(3);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Zuschauer §agesetzt");
-                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2$change §azu §2Zuschauer §ageändert!");
-				
+                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Zuschauer §ageändert!");
 						}
 					} else {
                         if($args[0] == "0"){
@@ -56,7 +53,10 @@ class Main extends PluginBase{
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast dein Gamemode zu §2Zuschauer §ageändert!");
 						}
                     }
+				} else if(!$sender->hasPermission("SimpleGM.use")){
+					$sender->sendMessage("§8[§bSimple§3GM§8] §cDu hast keine Berechtigung diesen Befehl zu verwenden!");
 				}
+					
             } else {
                 $sender->sendMessage("§8[§bSimple§3GM§8] §cBitte gebe: §e/gm <0/1/2/3> <spieler> (ohne spielername geht auch!)");
             }
