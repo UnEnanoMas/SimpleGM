@@ -23,19 +23,23 @@ class Main extends PluginBase{
                         if($args[0] == "0"){
                             $player->setGameMode(0);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Überleben §agesetzt");
-                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2 §azu §2Überleben §ageändert");
+                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2". $change ." §azu §2Überleben §ageändert");
+				
                         } else if($args[0] == "1"){
                             $player->setGameMode(1);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Kreativ §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2$change §azu §2Kreativ §ageändert!");
+				
                         } else if($args[0] == "2"){
                             $player->setGameMode(2);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Abendteuer §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2$change §azu §2Abendteuer §ageändert!");
+				
                         } else if($args[0] == "3"){
                             $player->setGameMode(3);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Zuschauer §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2$change §azu §2Zuschauer §ageändert!");
+				
 						}
 					} else {
                         if($args[0] == "0"){
