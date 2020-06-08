@@ -10,7 +10,7 @@ use pocketmine\Player;
 class Main extends PluginBase{
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
-        if($cmd->getName() == "gm"){
+        if($cmd->getName() === "gm"){
             if(isset($args[0])){
                 if($sender->hasPermission("SimpleGM.use")){
                     if(isset($args[1])){
@@ -21,34 +21,34 @@ class Main extends PluginBase{
                         }
                         $change = $player->getName();
 						
-                        if($args[0] == "0"){
-                            $change->setGamemode(0);
+                        if($args[0] === "0"){
+                            $player->setGamemode(0);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Überleben §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Überleben §ageändert");
-                        } else if($args[0] == "1"){
+                        } else if($args[0] === "1"){
                             $player->setGamemode(1);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Kreativ §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Kreativ §ageändert!");
-                        } else if($args[0] == "2"){
+                        } else if($args[0] === "2"){
                             $player->setGamemode(2);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Abendteuer §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Abendteuer §ageändert!");
-                        } else if($args[0] == "3"){
+                        } else if($args[0] === "3"){
                             $player->setGamemode(3);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Zuschauer §agesetzt");
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Zuschauer §ageändert!");
 						}
 					} else {
-                        if($args[0] == "0"){
+                        if($args[0] === "0"){
                             $sender->setGamemode(0);
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast dein Gamemode zu §2Überleben §ageändert!");                        
-                        } else if($args[0] == "1"){
+                        } else if($args[0] === "1"){
                             $sender->setGamemode(1);
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast dein Gamemode zu §2Kreativ §ageändert!");
-                        } else if($args[0] == "2"){
+                        } else if($args[0] === "2"){
                             $sender->setGamemode(2);
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast dein Gamemode zu §2Abendteuer §ageändert!");
-                        } else if($args[0] == "3"){
+                        } else if($args[0] === "3"){
                             $sender->setGamemode(3);
                             $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast dein Gamemode zu §2Zuschauer §ageändert!");
 						}
