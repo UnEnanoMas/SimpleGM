@@ -13,7 +13,7 @@ class Main extends PluginBase{
         if($cmd->getName() === "gm"){
             if(isset($args[0])){
                 if($sender->hasPermission("SimpleGM.use")){
-                    if(isset($args[1])){
+                    if(!isset($args[1])){
                         $player = $this->getServer()->getPlayer($args[1]);
                         if($player == null) {
                             $sender->sendMessage("§8[§bSimple§3GM§8] §cDieser Spieler wurde nicht gefunden!");
@@ -24,7 +24,7 @@ class Main extends PluginBase{
                         if($args[0] === "0"){
                             $player->setGamemode(0);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Überleben §agesetzt");
-                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2 §azu §2Überleben §ageändert");
+                            $sender->sendMessage("§8[§bSimple§3GM§8] §aDu hast den Gamemode von §2" . $change . " §azu §2Überleben §ageändert");
                         } else if($args[0] === "1"){
                             $player->setGamemode(1);
                             $player->sendMessage("§8[§bSimple§3GM§8] §aDein Gamemode wurde auf §2Kreativ §agesetzt");
